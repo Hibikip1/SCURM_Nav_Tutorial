@@ -82,7 +82,7 @@ def generate_launch_description():
             # "publish_free_space": False,
             # "octomap_path", ""
         }],
-            remappings=[('/cloud_in', '/terrain_map_at_scan')]
+            remappings=[('/cloud_in', '/livox/lidar/pointcloud')]
     )
             
     ld = LaunchDescription()
