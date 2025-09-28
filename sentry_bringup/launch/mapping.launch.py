@@ -14,7 +14,7 @@ def generate_launch_description():
 
   
   # fast-lio localization   
-  fast_lio_param = '/home/sentry_ws/src/sentry_bringup/params/fast_lio_mapping_param.yaml'
+  fast_lio_param = os.path.join(config_path, 'fast_lio_mapping_param.yaml')
   fast_lio_node = Node(
         package='fast_lio',
         executable='fastlio_mapping',

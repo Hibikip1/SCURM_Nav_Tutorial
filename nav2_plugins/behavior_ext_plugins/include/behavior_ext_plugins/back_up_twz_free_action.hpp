@@ -47,6 +47,8 @@ private:
   int free_threshold_;
   bool visualization_;
 
+  rclcpp::Clock::SharedPtr steady_clock_;
+
   // nav_msgs::msg::Odometry::SharedPtr odom_;
 };
 }

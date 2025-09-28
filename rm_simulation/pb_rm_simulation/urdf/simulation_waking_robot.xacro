@@ -250,7 +250,7 @@
     </gazebo>
 
     <!-- Livox-Mid360  -->
-    <xacro:include filename="$(find ros2_livox_simulation)/urdf/mid360.xacro" />
+    <xacro:include filename="$(find livox_laser_simulation_ro2)/urdf/mid360.xacro" />
     <xacro:mid360 name="livox_frame" parent="base_link" topic="/livox/lidar">
         <origin xyz="0 0.0 0.175" rpy="0 0 0"/>
     </xacro:mid360>

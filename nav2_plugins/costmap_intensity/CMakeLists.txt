@@ -4,6 +4,7 @@ project(costmap_intensity)
 set(lib_name ${PROJECT_NAME}_core)
 
 find_package(ament_cmake REQUIRED)
+find_package(nav2_costmap_2d REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(laser_geometry REQUIRED)
 find_package(map_msgs REQUIRED)
@@ -48,6 +49,7 @@ set(dependencies
   tf2_sensor_msgs
   visualization_msgs
   angles
+  nav2_costmap_2d
 )
 
 add_library(${lib_name} SHARED
@@ -57,6 +59,11 @@ add_library(${lib_name} SHARED
 
 include_directories(
   include
+)
+target_include_directories(${lib_name} PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>
+  ${nav2_costmap_2d_INCLUDE_DIRS}
 )
 
 ament_target_dependencies(${lib_name}
